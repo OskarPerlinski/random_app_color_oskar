@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:random_app_color_oskar/domain/services/color_service.dart';
 
+/// Home page that allows changing background color on tap
 class HomePage extends StatefulWidget {
+  /// Creates a [HomePage] widget
   const HomePage({super.key});
 
   @override
@@ -9,13 +11,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  static const _initialColor = Colors.white;
+
   late Color _backgroundColor;
   final ColorService _colorService = ColorService();
 
   @override
   void initState() {
     super.initState();
-    _backgroundColor = Colors.white;
+    _backgroundColor = _initialColor;
   }
 
   void _changeBackgroundColor() {
